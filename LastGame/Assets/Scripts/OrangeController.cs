@@ -27,6 +27,10 @@ public class OrangeController : MonoBehaviour
 
         if (d < r1 + r2)
         {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().IncreaseHeart();
+            director.GetComponent<GameDirector>().DecreaseFat();
+
             Destroy(gameObject);
         }
     }

@@ -27,6 +27,9 @@ public class FrenchController : MonoBehaviour
 
         if (d < r1 + r2)
         {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().IncreaseFat();
+            director.GetComponent<GameDirector>().IncreaseBadHeart();
             Destroy(gameObject);
         }
     }
