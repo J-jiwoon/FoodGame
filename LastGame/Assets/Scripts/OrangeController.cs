@@ -13,7 +13,7 @@ public class OrangeController : MonoBehaviour
     {
         transform.Translate(0, -0.1f, 0);
 
-        if (transform.position.y < -5.0f)
+        if (transform.position.y < 95f)
         {
             Destroy(gameObject);
         }

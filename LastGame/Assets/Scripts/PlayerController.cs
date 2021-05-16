@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public Sprite hungry;
     private SpriteRenderer spriteRenderer;
 
-
     GameObject HeartBar;
     GameObject FatBar;
 
@@ -20,7 +19,6 @@ public class PlayerController : MonoBehaviour
     {
         this.HeartBar = GameObject.Find("HeartBar");
         this.FatBar = GameObject.Find("FatBar");
-
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = healthy;
@@ -58,6 +56,18 @@ public class PlayerController : MonoBehaviour
         if ((this.HeartBar.GetComponent<Image>().fillAmount <= 0.3f))
         {
             spriteRenderer.sprite = hungry;
+        }
+
+        if((this.HeartBar.GetComponent<Image>().fillAmount == 0.0f))
+        {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().GameOver();
+        }
+
+        if ((this.FatBar.GetComponent<Image>().fillAmount >= 0.99f))
+        {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().GameOver();
         }
     }
 }

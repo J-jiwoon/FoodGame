@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameDirector : MonoBehaviour
@@ -9,6 +10,7 @@ public class GameDirector : MonoBehaviour
     GameObject FatBar;
 
     GameObject Score;
+
 
     float Time1 = 1;
     float Time2 = 1;
@@ -50,5 +52,10 @@ public class GameDirector : MonoBehaviour
     public void IncreaseBadHeart()
     {
         this.HeartBar.GetComponent<Image>().fillAmount += 0.01f;
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }

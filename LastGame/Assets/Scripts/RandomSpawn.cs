@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomSpawn : MonoBehaviour
 {    
     public GameObject[] foodPrefab;
-    private float spawnRangeX = 9f;
+    private float spawnRangeX = 109f;
     private float spawnposZ = 0;
 
     float span = 0.8f;
@@ -22,7 +22,7 @@ public class RandomSpawn : MonoBehaviour
         if (this.delta > this.span)
         {
             this.delta = 0;
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 6, spawnposZ);
+            Vector3 spawnPos = new Vector3(Random.Range(90, 110), 106, spawnposZ);
 
             int foodIndex = Random.Range(0, foodPrefab.Length);
             Instantiate(foodPrefab[foodIndex], spawnPos, Quaternion.identity);
