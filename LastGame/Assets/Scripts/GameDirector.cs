@@ -11,7 +11,6 @@ public class GameDirector : MonoBehaviour
 
     GameObject Score;
 
-
     float Time1 = 1;
     float Time2 = 1;
     int score = 0;
